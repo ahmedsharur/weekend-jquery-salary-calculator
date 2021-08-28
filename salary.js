@@ -7,9 +7,13 @@ function readyNow(){
     console.log('in readyNow')
 
     $('#submit-button').on('click', addEmployeeSalary)
-    $('#delete-button').on('click', deleteEmployeeInfo)
+    $('#employeesalary').on('click', '#delete-button', deleteEmployeeInfo)
 
 }
+
+let annualSalary = 0;
+    let totalMonthlySalary = 0;
+    totalMonthlySalary += annualSalary
 
 function addEmployeeSalary(){
 
@@ -23,13 +27,16 @@ function addEmployeeSalary(){
     // appending the list in the employee salary calculator
     $('#employeesalary').append(`
 <tr>
-     <td>'${firstName}'</td>
-    <td>'${lastName}'</td>
-    <td>'${id}'</td>
-    <td>'${title}'</td>
-    <td>'${annualSalary}'</td>
+     <td>${firstName}</td>
+    <td>${lastName}</td>
+    <td>${id}</td>
+    <td>${title}</td>
+    <td>$${annualSalary}</td>
     <th><button id="delete-button">Delete</button></th>
-</tr> `)
+    <h2 id ="total-salary">Total Monthly: $ </h2>
+</tr> 
+
+`)
 
     //empty the fields
     $('#f-name').val('');
@@ -41,5 +48,6 @@ function addEmployeeSalary(){
 
 
 function deleteEmployeeInfo(){
+    $(this).parent().parent().remove();
 
 }
