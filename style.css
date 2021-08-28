@@ -1,5 +1,28 @@
 h1{
     background-color: tomato;
     padding-left: 300px;
-   
 }
+
+h2{
+    color: orange;
+}
+
+#submit-button{
+  margin-left: 700px;
+  margin-top: 10px;
+  padding-left: 25px;
+  padding-top: 2px;
+  text-indent: -0.2rem;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
