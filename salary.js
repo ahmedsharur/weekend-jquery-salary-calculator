@@ -1,7 +1,9 @@
 console.log('in salary ')
 
+
 $(document).ready(readyNow)
 
+let totalMonthlySalary = [];
 
 function readyNow(){
     console.log('in readyNow')
@@ -11,10 +13,8 @@ function readyNow(){
 
 }
 
-let annualSalary = 0;
-    let totalMonthlySalary = 0;
-    totalMonthlySalary += annualSalary
 
+    
 function addEmployeeSalary(){
 
     // Target output by id
@@ -33,7 +33,7 @@ function addEmployeeSalary(){
     <td>${title}</td>
     <td>$${annualSalary}</td>
     <th><button id="delete-button">Delete</button></th>
-    <h2 id ="total-salary">Total Monthly: $ </h2>
+    // <p id ="total-salary">Total Monthly: $ </p>
 </tr> 
 
 `)
@@ -44,10 +44,21 @@ function addEmployeeSalary(){
     $('#i-d').val('');
     $('#title').val('');
     $('#annual-salary').val('');
+
+
+totalMonthlySalary.push(annualSalary)
+let totalSalary = 0;
+for (let salary of totalMonthlySalary){
+    totalSalary += parseInt(salary)
+
+$('#totalMonthlySalary').text(`Total Monthly: $ ${totalSalary}`)
+
+}
 }
 
 
 function deleteEmployeeInfo(){
-    $(this).parent().parent().remove();
+$(this).parent().parent().remove();
 
 }
+
