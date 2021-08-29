@@ -46,22 +46,28 @@ function addEmployeeSalary(){
     $('#title').val('');
     $('#annual-salary').val('');
 
-
+// pushing annualSalary to the totalMonthlySalary array
 totalMonthlySalary.push(annualSalary)
+
 let totalSalary = 0;
+// looping through the totalMonthlySalary array
 for (let salary of totalMonthlySalary){
-    totalSalary += Number(salary)
-
-$('#totalMonthlySalary').text(`Total Monthly: $ ${totalSalary/(12).toFixed(2)}`)
-
-    if (totalSalary/12 > 20000){
-    $('#totalMonthlySalary').text(`Total Monthly: $ ${totalSalary/(12).toFixed(2)}`).css('background-color', 'red')
-    }
+    totalSalary += Number(salary);
 }
+
+
+//if total monthly costs exceeds 20,000 there will be a red background color on the total monthly cost
+if (totalSalary/12 > 20000){
+    $('#totalMonthlySalary').text(`Total Monthly: $ ${(totalSalary/12).toFixed(2)}`).css('background-color', 'red')
+    }
+
+    $('#totalMonthlySalary').text(`Total Monthly: $ ${(totalSalary/12).toFixed(2)}`)
+
 }
 
 
 function deleteEmployeeInfo(){
+// this will delete 
 $(this).parent().parent().remove();
 
 }
