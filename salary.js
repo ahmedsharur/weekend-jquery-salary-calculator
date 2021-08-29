@@ -49,9 +49,9 @@ function addEmployeeSalary(){
 totalMonthlySalary.push(annualSalary)
 let totalSalary = 0;
 for (let salary of totalMonthlySalary){
-    totalSalary += parseInt(salary)
+    totalSalary += salary
 
-$('#totalMonthlySalary').text(`Total Monthly: $ ${totalSalary}`)
+$('#totalMonthlySalary').text(`Total Monthly: $ toFixed(${totalSalary/12})`)
 
 }
 }
